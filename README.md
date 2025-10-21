@@ -11,7 +11,7 @@ Requisitos de ejecucion
 
 Herramientas utilizadas
 - AWS
-- Sprinboot
+- Springboot
 - Java
 - Intellij
 
@@ -24,7 +24,19 @@ Realizmos el reto matematico en Sprinboot usando java, los cuales se prueban loc
 ![](images/local.png)
 
 Iniciamos con la programacion de nuestro servidor de Proxy:
+![](images/proxyconf.png)
 ![](images/proxy1.png)
 
+
 Subimmos utilizando git hub, y corremos la primera instancia:
+![](images/compila11.png)
 ![](images/despliegue.png)
+
+
+Hacemos lo mismo con la segunda instancia:
+
+![](images/segunda.png)
+
+Ahora corremos y verificamos su funcionamiento:
+
+![](images/segunda1.png)
