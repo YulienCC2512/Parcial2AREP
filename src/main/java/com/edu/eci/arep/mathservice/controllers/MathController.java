@@ -10,33 +10,35 @@ import java.util.*;
 public class MathController {
 
     @GetMapping("/factors")
-    public ArrayList<Integer> factors(@RequestParam(value = "num") Integer num) {
+    public String factors(@RequestParam Integer value) {
+        String operacion = "factors";
         ArrayList factores = new ArrayList();
-        for(int i = 1; i <= num/2; i++){
-            if (num % i == 0){
+        for(int i = 1; i <= value/2; i++){
+            if (value % i == 0){
                 factores.add(i);
             }
         }
-        factores.add(num);
-        return factores;
+        factores.add(value);
+        return "{operacion:" + operacion + ", input : " + value + "output :" + factores +"}";
     }
 
     @GetMapping("/primes")
-    public List<Integer> primes(@RequestParam(value = "num")Integer num){
+    public String primes(@RequestParam Integer value){
+        String operacion = "primos";
         ArrayList primos = new ArrayList();
 
-        for (int i = 1; i <= num;i++ ){
+        for (int i = 1; i <= value;i++ ){
             ArrayList factores = new ArrayList();
-            for(int j = 1; j <= num/2; j++){
-                if (num % j == 0){
+            for(int j = 1; j <= value/2; j++){
+                if (value % j == 0){
                     factores.add(j);
                 }
             }
             if (factores.size() == 2){
-                primos.add(num);
+                primos.add(value);
             }
         }
 
-        return primos;
+        return "{operacion:" + operacion + ", input : " + value + " output :" + primos +"}";
     }
 }
